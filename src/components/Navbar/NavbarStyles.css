@@ -1,0 +1,76 @@
+.nav-container {
+  background: #99f3bd;
+  color: #484d49;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.nav-logo {
+  display: flex;
+  justify-content: start;
+  margin-left: 15px;
+}
+
+.menu-icon {
+  display: none;
+}
+
+.nav-menu {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-gap: 20px;
+  list-style: none;
+  /* This is what makes it even */
+  width: 70vw;
+  justify-content: end;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: #484d49;
+}
+
+@media screen and (max-width: 960px) {
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    padding-top: 15rem;
+    width: 50%;
+    height: 100vh;
+    position: absolute;
+    top: 80px;
+    right: -100%;
+    opacity: 1;
+    transition: all 0.5s ease;
+    text-align: center;
+    z-index: 1;
+  }
+
+  .nav-menu.active {
+    background: #99f3bd;
+    right: 0;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 1;
+  }
+
+  .nav-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(20%, 50%);
+    font-size: 1.2rem;
+  }
+
+  .menu-icon {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-150%, 100%);
+    font-size: 1.5rem;
+  }
+}
